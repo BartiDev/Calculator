@@ -4,9 +4,92 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SCDesctopUI.Views"
+        xmlns:cal="http://www.caliburnproject.org"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <!-- Calculator Display -->
+        <TextBlock x:Name="CalculatorDisplay" Grid.Column="1" Grid.Row="1" 
+                   Grid.ColumnSpan="7" FontSize="40" HorizontalAlignment="Right" 
+                   VerticalAlignment="Bottom" Margin="10" Text="display"/>
+
+        <!-- Calculator Numeric Buttons-->
+        <Button x:Name="Bt7" Grid.Column="4" Grid.Row="3" Content="7"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt7.Content)]"/>
+        <Button x:Name="Bt8" Grid.Column="5" Grid.Row="3" Content="8"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt8.Content)]"/>
+        <Button x:Name="Bt9" Grid.Column="6" Grid.Row="3" Content="9"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt9.Content)]"/>
+        <Button x:Name="Bt4" Grid.Column="4" Grid.Row="4" Content="4"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt4.Content)]"/>
+        <Button x:Name="Bt5" Grid.Column="5" Grid.Row="4" Content="5"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt5.Content)]"/>
+        <Button x:Name="Bt6" Grid.Column="6" Grid.Row="4" Content="6"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt6.Content)]"/>
+        <Button x:Name="Bt1" Grid.Column="4" Grid.Row="5" Content="1"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt1.Content)]"/>
+        <Button x:Name="Bt2" Grid.Column="5" Grid.Row="5" Content="2"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt2.Content)]"/>
+        <Button x:Name="Bt3" Grid.Column="6" Grid.Row="5" Content="3"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt3.Content)]"/>
+        <Button x:Name="Bt0" Grid.Column="4" Grid.Row="6" Content="0"
+                cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt0.Content)]"/>
+
+        <!-- Calculator Dot Button-->
+        <Button x:Name="BtDot" Grid.Column="5" Grid.Row="6" Content="."
+                cal:Message.Attach="[Event Click] = [Action MakeDotInput(BtDot.Content)]"/>
+
+        <!-- Calculator Equal Sign Button-->
+        <Button x:Name="BtEqual" Grid.Column="6" Grid.Row="6" Content="="
+                cal:Message.Attach="[Event Click] = [Action MakeEqualInput(BtEqual.Content)]"/>
+
+        <!-- Calculator Binaray Operation Button-->
+        <Button x:Name="BtDivide" Grid.Column="7" Grid.Row="3" Content="/"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtDivide.Content)]"/>
+        <Button x:Name="BtMultiply" Grid.Column="7" Grid.Row="4" Content="x"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtMultiply.Content)]"/>
+        <Button x:Name="BtSubtract" Grid.Column="7" Grid.Row="5" Content="-"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtSubtract.Content)]"/>
+        <Button x:Name="BtAdd" Grid.Column="7" Grid.Row="6" Content="+"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtAdd.Content)]"/>
+        <!--Button x:Name="BtModulo" Grid.Column="3" Grid.Row="6" Content="^"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtModulo.Content)]"/>
+        <Button x:Name="BtRise" Grid.Column="6" Grid.Row="2" Content="%"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtRise.Content)]"/-->
+
+        <!-- Calculator Parantheses Button-->
+        <Button x:Name="BtLParantheses" Grid.Column="4" Grid.Row="2" Content="("
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtLParantheses.Content)]"/>
+        <Button x:Name="BtRParantheses" Grid.Column="5" Grid.Row="2" Content=")"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtRParantheses.Content)]"/>
+
+        <!-- Calculator Erase Button-->
+        <Button x:Name="BtAC" Grid.Column="7" Grid.Row="2" Content="AC"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtAC.Content)]"/>
+
+
     </Grid>
 </Window>
