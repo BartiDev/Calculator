@@ -8,6 +8,14 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         Title="ShellView" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -75,20 +83,32 @@
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtSubtract.Content)]"/>
         <Button x:Name="BtAdd" Grid.Column="7" Grid.Row="6" Content="+"
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtAdd.Content)]"/>
-        <!--Button x:Name="BtModulo" Grid.Column="3" Grid.Row="6" Content="^"
+        <Button x:Name="BtModulo" Grid.Column="3" Grid.Row="6" Content="^"
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtModulo.Content)]"/>
         <Button x:Name="BtRise" Grid.Column="6" Grid.Row="2" Content="%"
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtRise.Content)]"/-->
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtRise.Content)]"/>
+
+        <!-- Calculator Pre Unary Operation Button-->
+        <Button x:Name="BtLn" Grid.Column="3" Grid.Row="3" Content="ln"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLn.Content)]"/>
+        <Button x:Name="BtLog" Grid.Column="3" Grid.Row="4" Content="log"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLog.Content)]"/>
+        <Button x:Name="BtRoot" Grid.Column="3" Grid.Row="5" Content="root"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtRoot.Content)]"/>
+
+        <!-- Calculator post Unary Operation Button-->
+        <Button x:Name="BtFactorial" Grid.Column="3" Grid.Row="2" Content="!x"
+                cal:Message.Attach="[Event Click] = [Action MakePostUnaryOperatorInput(BtFactorial.Content)]"/>
 
         <!-- Calculator Parantheses Button-->
         <Button x:Name="BtLParantheses" Grid.Column="4" Grid.Row="2" Content="("
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtLParantheses.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeParanthesesInput(BtLParantheses.Content)]"/>
         <Button x:Name="BtRParantheses" Grid.Column="5" Grid.Row="2" Content=")"
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtRParantheses.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeParanthesesInput(BtRParantheses.Content)]"/>
 
         <!-- Calculator Erase Button-->
         <Button x:Name="BtAC" Grid.Column="7" Grid.Row="2" Content="AC"
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtAC.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeEraseInput(BtAC.Content)]"/>
 
 
     </Grid>

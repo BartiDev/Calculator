@@ -82,6 +82,37 @@ namespace SCDesctopUI.ViewModels
 			NotifyOfPropertyChange(() => CanMakeBinaryOperatorInput);
 		}
 
+		public bool CanMakePreUnaryOperatorInput
+		{
+			get
+			{
+				if (string.IsNullOrWhiteSpace(CalculatorDisplay))
+					return true;
+				return true;
+			}
+		}
+
+		public void MakePreUnaryOperatorInput(string text)
+		{
+			CalculatorDisplay += text;
+			NotifyOfPropertyChange(() => CanMakePreUnaryOperatorInput);
+		}
+		public bool CanMakePostUnaryOperatorInput
+		{
+			get
+			{
+				if (string.IsNullOrWhiteSpace(CalculatorDisplay))
+					return true;
+				return true;
+			}
+		}
+
+		public void MakePostUnaryOperatorInput(string text)
+		{
+			CalculatorDisplay += text;
+			NotifyOfPropertyChange(() => CanMakePostUnaryOperatorInput);
+		}
+
 		public bool CanMakeParanthesesInput
 		{
 			get
