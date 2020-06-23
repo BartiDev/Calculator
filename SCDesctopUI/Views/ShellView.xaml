@@ -75,30 +75,30 @@
                 cal:Message.Attach="[Event Click] = [Action MakeEqualInput(BtEqual.Content)]"/>
 
         <!-- Calculator Binaray Operation Button-->
-        <Button x:Name="BtDivide" Grid.Column="7" Grid.Row="3" Content="/"
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtDivide.Content)]"/>
-        <Button x:Name="BtMultiply" Grid.Column="7" Grid.Row="4" Content="x"
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtMultiply.Content)]"/>
+        <Button x:Name="BtDivide" Grid.Column="7" Grid.Row="3" Content="&#247;"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput('/')]"/>
+        <Button x:Name="BtMultiply" Grid.Column="7" Grid.Row="4" Content="&#215;"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput('x')]"/>
         <Button x:Name="BtSubtract" Grid.Column="7" Grid.Row="5" Content="-"
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtSubtract.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeMinusInput(BtSubtract.Content)]"/>
         <Button x:Name="BtAdd" Grid.Column="7" Grid.Row="6" Content="+"
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtAdd.Content)]"/>
-        <Button x:Name="BtModulo" Grid.Column="3" Grid.Row="6" Content="^"
+        <Button x:Name="BtModulo" Grid.Column="6" Grid.Row="2" Content="%"
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtModulo.Content)]"/>
-        <Button x:Name="BtRise" Grid.Column="6" Grid.Row="2" Content="%"
-                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtRise.Content)]"/>
+        <Button x:Name="BtRise" Grid.Column="3" Grid.Row="6" Content="x&#696;"
+                cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput('^')]"/>
 
         <!-- Calculator Pre Unary Operation Button-->
         <Button x:Name="BtLn" Grid.Column="3" Grid.Row="3" Content="ln"
                 cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLn.Content)]"/>
         <Button x:Name="BtLog" Grid.Column="3" Grid.Row="4" Content="log"
                 cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLog.Content)]"/>
-        <Button x:Name="BtRoot" Grid.Column="3" Grid.Row="5" Content="root"
-                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtRoot.Content)]"/>
+        <Button x:Name="BtRoot" Grid.Column="3" Grid.Row="5" Content="&#8730;"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sqrt')]"/>
 
         <!-- Calculator post Unary Operation Button-->
         <Button x:Name="BtFactorial" Grid.Column="3" Grid.Row="2" Content="!x"
-                cal:Message.Attach="[Event Click] = [Action MakePostUnaryOperatorInput(BtFactorial.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakePostUnaryOperatorInput('!')]"/>
 
         <!-- Calculator Parantheses Button-->
         <Button x:Name="BtLParantheses" Grid.Column="4" Grid.Row="2" Content="("

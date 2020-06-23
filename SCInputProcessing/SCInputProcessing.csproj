@@ -43,6 +43,10 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="Displaying\Display.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleBinaryOperatorInput.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleDotInput.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleNumericInput.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleMinusInput.cs" />
     <Compile Include="InputHandling\InputHandler.cs" />
     <Compile Include="Processing\Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

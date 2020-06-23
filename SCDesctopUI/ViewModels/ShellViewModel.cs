@@ -20,33 +20,57 @@ namespace SCDesctopUI.ViewModels
 			set { _calculatorDisplay = value; NotifyOfPropertyChange(() => CalculatorDisplay); }
 		}
 
-		public bool CanMakeNumericInput
-		{
-			get { return true; }
+		public bool CanMakeNumericInput 
+		{ 
+			get { return calculator.inputHandler.CanHandleNumericInput(); } 
 		}
 		public void MakeNumericInput(string text)
 		{
 			calculator.inputHandler.HandleNumericInput(text);
 
 			CalculatorDisplay = calculator.display.SendDisplay();
-			NotifyOfPropertyChange(() => CanMakeNumericInput);
+			UpdateProperties();
 		}
 
 
 		public bool CanMakeDotInput
 		{
-			get
-			{
-				if (string.IsNullOrWhiteSpace(CalculatorDisplay))
-					return true;
-				return true;
-			}
+			get { return calculator.inputHandler.CanHandleDotInput(); }
 		}
 		public void MakeDotInput(string text)
 		{
-			CalculatorDisplay += text;
-			NotifyOfPropertyChange(() => CanMakeDotInput);
+			calculator.inputHandler.HandleDotInput();
+
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
 		}
+
+
+		public bool CanMakeBinaryOperatorInput
+		{
+			get { return calculator.inputHandler.CanHandleBinaryOperatorInput(); }	
+		}
+		public void MakeBinaryOperatorInput(string text)
+		{
+			calculator.inputHandler.HandleBinaryOperatorInput(text);
+
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
+		}
+
+
+		public bool CanMakeMinusInput
+		{
+			get { return calculator.inputHandler.CanHandleMinusInput(); }
+		}
+		public void MakeMinusInput(string text)
+		{
+			calculator.inputHandler.HandleMinusInput();
+
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
+		}
+
 
 		public bool CanMakeEqualInput
 		{
@@ -57,29 +81,11 @@ namespace SCDesctopUI.ViewModels
 				return true;
 			}
 		}
-
 		public void MakeEqualInput(string text)
 		{
 			CalculatorDisplay += text;
 			NotifyOfPropertyChange(() => CanMakeEqualInput);
 		}
-
-		public bool CanMakeBinaryOperatorInput
-		{
-			get
-			{
-				if (string.IsNullOrWhiteSpace(CalculatorDisplay))
-					return true;
-				return true;
-			}
-		}
-
-		public void MakeBinaryOperatorInput(string text)
-		{
-			CalculatorDisplay += text;
-			NotifyOfPropertyChange(() => CanMakeBinaryOperatorInput);
-		}
-
 		public bool CanMakePreUnaryOperatorInput
 		{
 			get
@@ -142,6 +148,12 @@ namespace SCDesctopUI.ViewModels
 			CalculatorDisplay += text;
 			NotifyOfPropertyChange(() => CanMakeEraseInput);
 		}
-
+		private void UpdateProperties()
+		{
+			NotifyOfPropertyChange(() => CanMakeBinaryOperatorInput);
+			NotifyOfPropertyChange(() => CanMakeDotInput);
+			NotifyOfPropertyChange(() => CanMakeNumericInput);
+			NotifyOfPropertyChange(() => CanMakeMinusInput);
+		}
 	}
 }
