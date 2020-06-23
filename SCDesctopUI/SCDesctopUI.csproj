@@ -111,5 +111,11 @@
   <ItemGroup>
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SCInputProcessing\SCInputProcessing.csproj">
+      <Project>{578E6600-5BD4-4A38-86AB-E3BE358595B5}</Project>
+      <Name>SCInputProcessing</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using SCInputProcessing;
 using System;
 using System.Collections.Generic;
 using System.IO.Packaging;
@@ -11,6 +12,7 @@ namespace SCDesctopUI.ViewModels
     public class ShellViewModel : Screen
     {
 		private string _calculatorDisplay;
+		private Calculator calculator = new Calculator();
 
 		public string CalculatorDisplay
 		{
@@ -20,19 +22,16 @@ namespace SCDesctopUI.ViewModels
 
 		public bool CanMakeNumericInput
 		{
-			get
-			{
-				if (string.IsNullOrWhiteSpace(CalculatorDisplay))
-					return true;
-				return true;
-			}
+			get { return true; }
 		}
-
 		public void MakeNumericInput(string text)
 		{
-			CalculatorDisplay += text;
+			calculator.inputHandler.HandleNumericInput(text);
+
+			CalculatorDisplay = calculator.display.SendDisplay();
 			NotifyOfPropertyChange(() => CanMakeNumericInput);
 		}
+
 
 		public bool CanMakeDotInput
 		{
@@ -43,7 +42,6 @@ namespace SCDesctopUI.ViewModels
 				return true;
 			}
 		}
-
 		public void MakeDotInput(string text)
 		{
 			CalculatorDisplay += text;
