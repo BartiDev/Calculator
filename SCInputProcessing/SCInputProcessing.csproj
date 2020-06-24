@@ -47,6 +47,10 @@
     <Compile Include="InputHandling\HandleInput\HandleDotInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleNumericInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleMinusInput.cs" />
+    <Compile Include="InputHandling\HandleInput\HandlePreUnaryOperatorInput.cs" />
+    <Compile Include="InputHandling\HandleInput\HandlePostUnaryOperatorInput.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleLParanthesisInput.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleRParanthesisInput.cs" />
     <Compile Include="InputHandling\InputHandler.cs" />
     <Compile Include="Processing\Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

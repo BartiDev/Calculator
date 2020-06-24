@@ -101,10 +101,10 @@
                 cal:Message.Attach="[Event Click] = [Action MakePostUnaryOperatorInput('!')]"/>
 
         <!-- Calculator Parantheses Button-->
-        <Button x:Name="BtLParantheses" Grid.Column="4" Grid.Row="2" Content="("
-                cal:Message.Attach="[Event Click] = [Action MakeParanthesesInput(BtLParantheses.Content)]"/>
-        <Button x:Name="BtRParantheses" Grid.Column="5" Grid.Row="2" Content=")"
-                cal:Message.Attach="[Event Click] = [Action MakeParanthesesInput(BtRParantheses.Content)]"/>
+        <Button x:Name="BtLParanthesis" Grid.Column="4" Grid.Row="2" Content="("
+                cal:Message.Attach="[Event Click] = [Action MakeLParanthesisInput(BtLParanthesis.Content)]"/>
+        <Button x:Name="BtRParanthesis" Grid.Column="5" Grid.Row="2" Content=")"
+                cal:Message.Attach="[Event Click] = [Action MakeRParanthesisInput(BtRParanthesis.Content)]"/>
 
         <!-- Calculator Erase Button-->
         <Button x:Name="BtAC" Grid.Column="7" Grid.Row="2" Content="AC"

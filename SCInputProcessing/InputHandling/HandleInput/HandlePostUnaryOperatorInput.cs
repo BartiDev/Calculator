@@ -6,21 +6,27 @@ using System.Threading.Tasks;
 
 namespace SCInputProcessing.InputHandling
 {
-    public class HandleBinaryOperatorInput
+    public class HandlePostUnaryOperatorInput
     {
         public void HandleInput(List<string> inputSequence, string input)
         {
+            int sLenght = inputSequence.Count;
+
+            inputSequence.Add(inputSequence[sLenght - 1]);
+            inputSequence[sLenght - 1] = "(";
+            inputSequence.Add(")");
             inputSequence.Add(input);
-            inputSequence.Add("");
         }
 
         public bool CanHandle(List<string> inputSequence)
         {
             int sLenght = inputSequence.Count;
-            if (sLenght <= 1)
+
+            if (inputSequence[sLenght - 1] == "")
                 return false;
-            if (inputSequence[sLenght - 1] == "" && inputSequence[sLenght - 2] != ")")
+            if (inputSequence[sLenght - 1].Contains("-"))
                 return false;
+
             return true;
         }
     }
