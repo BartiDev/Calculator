@@ -68,19 +68,21 @@
 
         <!-- Calculator Dot Button-->
         <Button x:Name="BtDot" Grid.Column="5" Grid.Row="6" Content="."
-                cal:Message.Attach="[Event Click] = [Action MakeDotInput(BtDot.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeDotInput]"/>
 
         <!-- Calculator Equal Sign Button-->
         <Button x:Name="BtEqual" Grid.Column="6" Grid.Row="6" Content="="
-                cal:Message.Attach="[Event Click] = [Action MakeEqualInput(BtEqual.Content)]"/>
-
+                cal:Message.Attach="[Event Click] = [Action MakeEqualInput]"/>
+        
+        <!-- Calculator Minus Sign -->
+        <Button x:Name="BtMinus" Grid.Column="7" Grid.Row="5" Content="-"
+                cal:Message.Attach="[Event Click] = [Action MakeMinusInput]"/>
+        
         <!-- Calculator Binaray Operation Button-->
         <Button x:Name="BtDivide" Grid.Column="7" Grid.Row="3" Content="&#247;"
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput('/')]"/>
         <Button x:Name="BtMultiply" Grid.Column="7" Grid.Row="4" Content="&#215;"
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput('x')]"/>
-        <Button x:Name="BtSubtract" Grid.Column="7" Grid.Row="5" Content="-"
-                cal:Message.Attach="[Event Click] = [Action MakeMinusInput(BtSubtract.Content)]"/>
         <Button x:Name="BtAdd" Grid.Column="7" Grid.Row="6" Content="+"
                 cal:Message.Attach="[Event Click] = [Action MakeBinaryOperatorInput(BtAdd.Content)]"/>
         <Button x:Name="BtModulo" Grid.Column="6" Grid.Row="2" Content="%"
@@ -102,13 +104,13 @@
 
         <!-- Calculator Parantheses Button-->
         <Button x:Name="BtLParanthesis" Grid.Column="4" Grid.Row="2" Content="("
-                cal:Message.Attach="[Event Click] = [Action MakeLParanthesisInput(BtLParanthesis.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeLParanthesisInput]"/>
         <Button x:Name="BtRParanthesis" Grid.Column="5" Grid.Row="2" Content=")"
-                cal:Message.Attach="[Event Click] = [Action MakeRParanthesisInput(BtRParanthesis.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeRParanthesisInput]"/>
 
         <!-- Calculator Erase Button-->
         <Button x:Name="BtAC" Grid.Column="7" Grid.Row="2" Content="AC"
-                cal:Message.Attach="[Event Click] = [Action MakeEraseInput(BtAC.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeEraseInput]"/>
 
 
     </Grid>

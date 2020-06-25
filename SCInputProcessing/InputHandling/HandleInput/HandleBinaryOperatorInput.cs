@@ -10,16 +10,28 @@ namespace SCInputProcessing.InputHandling
     {
         public void HandleInput(List<string> inputSequence, string input)
         {
-            inputSequence.Add(input);
-            inputSequence.Add("");
+            int sLenght = inputSequence.Count;
+
+            if (inputSequence[sLenght - 1] == "")
+            {
+                inputSequence[sLenght-1] += input;
+                inputSequence.Add("");
+            }
+            else
+            {
+                inputSequence.Add(input);
+                inputSequence.Add("");
+            }
         }
 
         public bool CanHandle(List<string> inputSequence)
         {
             int sLenght = inputSequence.Count;
-            if (sLenght <= 1)
+            if (inputSequence[0] == "")
                 return false;
             if (inputSequence[sLenght - 1] == "" && inputSequence[sLenght - 2] != ")")
+                return false;
+            if (inputSequence[sLenght - 1] == "-")
                 return false;
             return true;
         }

@@ -14,7 +14,7 @@ namespace SCInputProcessing.InputHandling
 
             if (inputSequence[0] == "")
             {
-                inputSequence.Add(input);
+                inputSequence[0] = input;
                 inputSequence.Add("(");
                 inputSequence.Add("");
             }
@@ -38,7 +38,7 @@ namespace SCInputProcessing.InputHandling
             else if((inputSequence.Count > 2 && inputSequence[sLength-1] == "") || 
                 (inputSequence[sLength - 1] == "" && inputSequence[sLength - 2] == "("))
             {
-                inputSequence.Add(input);
+                inputSequence[sLength-1] = input;
                 inputSequence.Add("(");
                 inputSequence.Add("");
             }

@@ -6,23 +6,19 @@ using System.Threading.Tasks;
 
 namespace SCInputProcessing.InputHandling
 {
-    public class HandleRParanthesisInput
+    public class HandleEqualInput
     {
         public void HandleInput(List<string> inputSequence)
         {
-            int sLength = inputSequence.Count;
-
-            inputSequence.Add(")");
-            inputSequence.Add("");
         }
 
-        public bool CanHandle(List<string> inputSequence, List<string> binaryOperators)
+        public bool CanHandle(List<string> inputSequence)
         {
             int lParantheses = 0;
             int rParantheses = 0;
             int sLength = inputSequence.Count;
 
-            foreach(string input in inputSequence)
+            foreach (string input in inputSequence)
             {
                 if (input == "(" || input == "-(")
                     lParantheses++;
@@ -30,15 +26,15 @@ namespace SCInputProcessing.InputHandling
                     rParantheses++;
             }
 
-            if (rParantheses >= lParantheses)
+            if (rParantheses != lParantheses)
                 return false;
 
-            if (sLength > 1)
+            if(sLength > 1)
                 if (inputSequence[sLength - 1] == "" && inputSequence[sLength - 2] != ")")
                     return false;
-            if (sLength > 1)
-                if (inputSequence[sLength - 1] == "-" && (inputSequence[sLength - 2] == "(" || binaryOperators.Contains(inputSequence[sLength - 2])))
-                    return false;
+
+            if (inputSequence[0] == "")
+                return false;
 
             return true;
         }

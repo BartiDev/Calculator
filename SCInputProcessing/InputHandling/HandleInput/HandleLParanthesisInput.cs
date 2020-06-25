@@ -27,10 +27,14 @@ namespace SCInputProcessing.InputHandling
                 inputSequence[sLength - 1] += "(";
                 inputSequence.Add("");
             }
-            else if (inputSequence[sLength - 1] != "" ||
-                (inputSequence[sLength - 1] == "" && inputSequence[sLength - 2] == ")"))
+            else if (inputSequence[sLength - 1] != "")
             {
                 inputSequence.Add("x");
+                inputSequence.Add("(");
+                inputSequence.Add("");
+            }else if(inputSequence[sLength - 1] == "" && inputSequence[sLength - 2] == ")")
+            {
+                inputSequence[sLength - 1] += "x";
                 inputSequence.Add("(");
                 inputSequence.Add("");
             }

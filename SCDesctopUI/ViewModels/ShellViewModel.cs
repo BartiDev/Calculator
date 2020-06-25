@@ -37,7 +37,7 @@ namespace SCDesctopUI.ViewModels
 		{
 			get { return calculator.inputHandler.CanHandleDotInput(); }
 		}
-		public void MakeDotInput(string text)
+		public void MakeDotInput()
 		{
 			calculator.inputHandler.HandleDotInput();
 
@@ -63,7 +63,7 @@ namespace SCDesctopUI.ViewModels
 		{
 			get { return calculator.inputHandler.CanHandleMinusInput(); }
 		}
-		public void MakeMinusInput(string text)
+		public void MakeMinusInput()
 		{
 			calculator.inputHandler.HandleMinusInput();
 
@@ -102,7 +102,7 @@ namespace SCDesctopUI.ViewModels
 		{
 			get { return calculator.inputHandler.CanHandleLParanthesisInput(); }
 		}
-		public void MakeLParanthesisInput(string text)
+		public void MakeLParanthesisInput()
 		{
 			calculator.inputHandler.HandleLParanthesisInput();
 
@@ -115,7 +115,7 @@ namespace SCDesctopUI.ViewModels
 		{
 			get { return calculator.inputHandler.CanHandleRParanthesisInput(); }
 		}
-		public void MakeRParanthesisInput(string text)
+		public void MakeRParanthesisInput()
 		{
 			calculator.inputHandler.HandleRParanthesisInput();
 
@@ -124,39 +124,34 @@ namespace SCDesctopUI.ViewModels
 		}
 
 
+		public bool CanMakeEraseInput
+		{
+			get { return calculator.inputHandler.CanHandleEraseInput(); }
+		}
+		public void MakeEraseInput()
+		{
+			calculator.inputHandler.HandleEraseInput();
+
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
+		}
+
+
 		public bool CanMakeEqualInput
 		{
-			get
-			{
-				if (string.IsNullOrWhiteSpace(CalculatorDisplay))
-					return true;
-				return true;
-			}
+			get { return calculator.inputHandler.CanHandleEqualInput(); }
 		}
-		public void MakeEqualInput(string text)
+		public void MakeEqualInput()
 		{
-			CalculatorDisplay += text;
-			NotifyOfPropertyChange(() => CanMakeEqualInput);
+			calculator.inputHandler.HandleEqualInput();
+
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
 		}
 
 
 		
 
-		public bool CanMakeEraseInput
-		{
-			get
-			{
-				if (string.IsNullOrWhiteSpace(CalculatorDisplay))
-					return true;
-				return true;
-			}
-		}
-
-		public void MakeEraseInput(string text)
-		{
-			CalculatorDisplay += text;
-			NotifyOfPropertyChange(() => CanMakeEraseInput);
-		}
 		private void UpdateProperties()
 		{
 			NotifyOfPropertyChange(() => CanMakeBinaryOperatorInput);
@@ -167,6 +162,8 @@ namespace SCDesctopUI.ViewModels
 			NotifyOfPropertyChange(() => CanMakePostUnaryOperatorInput);
 			NotifyOfPropertyChange(() => CanMakeLParanthesisInput);
 			NotifyOfPropertyChange(() => CanMakeRParanthesisInput);
+			NotifyOfPropertyChange(() => CanMakeEraseInput);
+			NotifyOfPropertyChange(() => CanMakeEqualInput);
 		}
 	}
 }

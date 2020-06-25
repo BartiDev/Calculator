@@ -17,6 +17,8 @@ namespace SCInputProcessing.InputHandling
         HandleLParanthesisInput handleLParanthesisInput = new HandleLParanthesisInput();
         HandleRParanthesisInput handleRParanthesisInput = new HandleRParanthesisInput();
         HandlePostUnaryOperatorInput handlePostUnaryOperatorInput = new HandlePostUnaryOperatorInput();
+        HandleEraseInput handleEraseInput = new HandleEraseInput();
+        HandleEqualInput handleEqualInput = new HandleEqualInput();
 
         public InputHandler(Calculator calculator)
         {
@@ -55,6 +57,14 @@ namespace SCInputProcessing.InputHandling
         {
             handleRParanthesisInput.HandleInput(c.inputSequence);
         }
+        public void HandleEraseInput()
+        {
+            handleEraseInput.HandleInput(c.inputSequence, c.postUnaryOperators, c.preUnaryOperators);
+        }
+        public void HandleEqualInput()
+        {
+            handleEqualInput.HandleInput(c.inputSequence);
+        }
 
 
         public bool CanHandleNumericInput()
@@ -89,6 +99,13 @@ namespace SCInputProcessing.InputHandling
         {
             return handleRParanthesisInput.CanHandle(c.inputSequence, c.binaryOperators);
         }
-
+        public bool CanHandleEraseInput()
+        {
+            return handleEraseInput.CanHandle(c.inputSequence);
+        }
+        public bool CanHandleEqualInput()
+        {
+            return handleEqualInput.CanHandle(c.inputSequence);
+        }
     }
 }
