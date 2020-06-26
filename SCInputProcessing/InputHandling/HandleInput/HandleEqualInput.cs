@@ -8,7 +8,7 @@ namespace SCInputProcessing.InputHandling
 {
     public class HandleEqualInput
     {
-        public void HandleInput(List<string> inputSequence)
+        public void HandleInput()
         {
         }
 

@@ -63,7 +63,7 @@ namespace SCInputProcessing.InputHandling
         }
         public void HandleEqualInput()
         {
-            handleEqualInput.HandleInput(c.inputSequence);
+            c.processor.PerformCalculation();
         }
 
 

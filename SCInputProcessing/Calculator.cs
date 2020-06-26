@@ -29,6 +29,7 @@ namespace SCInputProcessing
             processor = new Processor(this);
             display = new Display(this);
 
+            //operators list according to the order of operation
             operatorList = new List<List<string>>
             {
                 new List<string>{"!", "ln", "log", "^", "sqrt"},

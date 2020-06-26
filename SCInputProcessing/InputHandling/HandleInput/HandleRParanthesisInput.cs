@@ -12,8 +12,16 @@ namespace SCInputProcessing.InputHandling
         {
             int sLength = inputSequence.Count;
 
-            inputSequence.Add(")");
-            inputSequence.Add("");
+            if (inputSequence[sLength - 2] == ")")
+            {
+                inputSequence[sLength-1] += ")";
+                inputSequence.Add("");
+            }
+            else
+            {
+                inputSequence.Add(")");
+                inputSequence.Add("");
+            }
         }
 
         public bool CanHandle(List<string> inputSequence, List<string> binaryOperators)

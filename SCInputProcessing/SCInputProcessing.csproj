@@ -54,6 +54,11 @@
     <Compile Include="InputHandling\HandleInput\HandleLParanthesisInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleRParanthesisInput.cs" />
     <Compile Include="InputHandling\InputHandler.cs" />
+    <Compile Include="Processing\CalculateExpression.cs" />
+    <Compile Include="Processing\ExtractInnerMostParanthesis.cs" />
+    <Compile Include="Processing\MakeCalculation\MakeBinaryCalculation.cs" />
+    <Compile Include="Processing\MakeCalculation\MakePostUnaryCalculation.cs" />
+    <Compile Include="Processing\MakeCalculation\MakePreUnaryCalculation.cs" />
     <Compile Include="Processing\Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
