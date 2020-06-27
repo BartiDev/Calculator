@@ -97,9 +97,17 @@
                 cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLog.Content)]"/>
         <Button x:Name="BtRoot" Grid.Column="3" Grid.Row="5" Content="&#8730;"
                 cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sqrt')]"/>
+        <Button x:Name="Btsin" Grid.Column="2" Grid.Row="3" Content="sin"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sin')]"/>
+        <Button x:Name="Btcos" Grid.Column="2" Grid.Row="4" Content="cos"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('cos')]"/>
+        <Button x:Name="Bttan" Grid.Column="2" Grid.Row="5" Content="tan"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('tan')]"/>
+        <Button x:Name="BtEXP" Grid.Column="2" Grid.Row="6" Content="EXP"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('E')]"/>
 
         <!-- Calculator post Unary Operation Button-->
-        <Button x:Name="BtFactorial" Grid.Column="3" Grid.Row="2" Content="!x"
+        <Button x:Name="BtFactorial" Grid.Column="3" Grid.Row="2" Content="x!"
                 cal:Message.Attach="[Event Click] = [Action MakePostUnaryOperatorInput('!')]"/>
 
         <!-- Calculator Parantheses Button-->

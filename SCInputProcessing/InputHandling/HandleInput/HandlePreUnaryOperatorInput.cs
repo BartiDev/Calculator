@@ -15,7 +15,7 @@ namespace SCInputProcessing.InputHandling
             if (inputSequence[0] == "")
             {
                 inputSequence[0] = input;
-                inputSequence.Add("(");
+                //inputSequence.Add("(");
                 inputSequence.Add("");
             }
             else if((inputSequence[sLength - 1] == "-") ||
@@ -24,7 +24,7 @@ namespace SCInputProcessing.InputHandling
                 inputSequence[sLength - 1] = "0";
                 inputSequence.Add("-");
                 inputSequence.Add(input);
-                inputSequence.Add("(");
+                //inputSequence.Add("(");
                 inputSequence.Add("");
             }
             else if(inputSequence[sLength-1] != "" ||
@@ -32,14 +32,14 @@ namespace SCInputProcessing.InputHandling
             {
                 inputSequence.Add("x");
                 inputSequence.Add(input);
-                inputSequence.Add("(");
+                //inputSequence.Add("(");
                 inputSequence.Add("");
             }
             else if((inputSequence.Count > 2 && inputSequence[sLength-1] == "") || 
                 (inputSequence[sLength - 1] == "" && inputSequence[sLength - 2] == "("))
             {
                 inputSequence[sLength-1] = input;
-                inputSequence.Add("(");
+                //inputSequence.Add("(");
                 inputSequence.Add("");
             }
 

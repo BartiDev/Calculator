@@ -22,6 +22,18 @@ namespace SCInputProcessing.Processing
                 case "sqrt":
                     result = Math.Sqrt(Convert.ToDouble(num));
                     break;
+                case "sin":
+                    result = Math.Sin(Convert.ToDouble(num));
+                    break;
+                case "cos":
+                    result = Math.Cos(Convert.ToDouble(num));
+                    break;
+                case "tan":
+                    result = Math.Tan(Convert.ToDouble(num));
+                    break;
+                case "E":
+                    result = Math.Pow(10, Convert.ToDouble(num));
+                    break;
             }
             return Convert.ToString(result);
         }
