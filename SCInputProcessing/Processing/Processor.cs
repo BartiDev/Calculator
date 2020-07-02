@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,7 @@ namespace SCInputProcessing.Processing
         Calculator c;
         ExtractInnerMostParanthesis extractInnerMostParanthesis = new ExtractInnerMostParanthesis();
         CalculateExpression calculateExpression = new CalculateExpression();
+        EvaluateConstants evaluateConstants = new EvaluateConstants();
 
         public Processor(Calculator calculator)
         {
@@ -19,6 +21,9 @@ namespace SCInputProcessing.Processing
 
         public void PerformCalculation()
         {
+
+            evaluateConstants.Evaluate(c.inputSequence);
+
             int[] innerMostParanthesis = null;
             bool minusBeforeLParanthesis;
             List<string> exprestionToCalculate;

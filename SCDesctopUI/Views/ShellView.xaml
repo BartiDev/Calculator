@@ -66,6 +66,12 @@
         <Button x:Name="Bt0" Grid.Column="4" Grid.Row="6" Content="0"
                 cal:Message.Attach="[Event Click] = [Action MakeNumericInput(Bt0.Content)]"/>
 
+        <!-- Calculator Constant Buttons-->
+        <Button x:Name="BtE" Grid.Column="1" Grid.Row="5" Content="e"
+                cal:Message.Attach="[Event Click] = [Action MakeConstantInput('e')]"/>
+        <Button x:Name="BtPi" Grid.Column="1" Grid.Row="4" Content="&#960;"
+                cal:Message.Attach="[Event Click] = [Action MakeConstantInput('pi')]"/>
+
         <!-- Calculator Dot Button-->
         <Button x:Name="BtDot" Grid.Column="5" Grid.Row="6" Content="."
                 cal:Message.Attach="[Event Click] = [Action MakeDotInput]"/>

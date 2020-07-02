@@ -21,6 +21,7 @@ namespace SCInputProcessing
         public List<string> binaryOperators;
         public List<string> preUnaryOperators;
         public List<string> postUnaryOperators;
+        public List<string> constants;
 
         public Calculator()
         {
@@ -39,6 +40,7 @@ namespace SCInputProcessing
             binaryOperators = new List<string> { "^", "x", "/", "%", "+", "-" };
             preUnaryOperators = new List<string> { "ln", "log", "sqrt", "sin", "cos", "tan", "E" };
             postUnaryOperators = new List<string> { "!" };
+            constants = new List<string> { "e", "pi" };
         }
 
         

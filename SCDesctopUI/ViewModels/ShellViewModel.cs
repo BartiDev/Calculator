@@ -46,6 +46,19 @@ namespace SCDesctopUI.ViewModels
 		}
 
 
+		public bool CanMakeConstantInput
+		{
+			get { return calculator.inputHandler.CanHandleConstantInput(); }
+		}
+		public void MakeConstantInput(string text)
+		{
+			calculator.inputHandler.HandleConstantInput(text);
+
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
+		}
+
+
 		public bool CanMakeBinaryOperatorInput
 		{
 			get { return calculator.inputHandler.CanHandleBinaryOperatorInput(); }	
@@ -156,6 +169,7 @@ namespace SCDesctopUI.ViewModels
 		{
 			NotifyOfPropertyChange(() => CanMakeBinaryOperatorInput);
 			NotifyOfPropertyChange(() => CanMakeDotInput);
+			NotifyOfPropertyChange(() => CanMakeConstantInput);
 			NotifyOfPropertyChange(() => CanMakeNumericInput);
 			NotifyOfPropertyChange(() => CanMakeMinusInput);
 			NotifyOfPropertyChange(() => CanMakePreUnaryOperatorInput);

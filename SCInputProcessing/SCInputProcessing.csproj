@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="Displaying\Display.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleConstantInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleEqualInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleEraseInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleBinaryOperatorInput.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="InputHandling\HandleInput\HandleRParanthesisInput.cs" />
     <Compile Include="InputHandling\InputHandler.cs" />
     <Compile Include="Processing\CalculateExpression.cs" />
+    <Compile Include="Processing\EvaluateConstants.cs" />
     <Compile Include="Processing\ExtractInnerMostParanthesis.cs" />
     <Compile Include="Processing\MakeCalculation\MakeBinaryCalculation.cs" />
     <Compile Include="Processing\MakeCalculation\MakePostUnaryCalculation.cs" />

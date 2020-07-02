@@ -11,6 +11,7 @@ namespace SCInputProcessing.InputHandling
         Calculator c;
         HandleNumericInput handleNumericInput = new HandleNumericInput();
         HandleDotInput handleDotInput = new HandleDotInput();
+        HandleConstantInput handleConstantInput = new HandleConstantInput();
         HandleBinaryOperatorInput handleBinaryOperatorInput = new HandleBinaryOperatorInput();
         HandleMinusInput handleMinusInput = new HandleMinusInput();
         HandlePreUnaryOperatorInput handlePreUnaryOperatorInput = new HandlePreUnaryOperatorInput();
@@ -27,11 +28,15 @@ namespace SCInputProcessing.InputHandling
 
         public void HandleNumericInput(string input)
         {
-            handleNumericInput.HandleInput(c.inputSequence, input);
+            handleNumericInput.HandleInput(c.inputSequence, c.constants, input);
         }
         public void HandleDotInput()
         {
-            handleDotInput.HandleInput(c.inputSequence);
+            handleDotInput.HandleInput(c.inputSequence, c.constants);
+        }
+        public void HandleConstantInput(string input)
+        {
+            handleConstantInput.HandleInput(c.inputSequence, input);
         }
         public void HandleBinaryOperatorInput(string input)
         {
@@ -74,6 +79,10 @@ namespace SCInputProcessing.InputHandling
         public bool CanHandleDotInput()
         {
             return handleDotInput.CanHandle(c.inputSequence, c.postUnaryOperators);
+        }
+        public bool CanHandleConstantInput()
+        {
+            return handleConstantInput.CanHandle(c.inputSequence);
         }
         public bool CanHandleBinaryOperatorInput()
         {
