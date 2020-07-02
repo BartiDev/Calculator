@@ -5,7 +5,10 @@ using System.Collections.Generic;
 using System.IO.Packaging;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace SCDesctopUI.ViewModels
 {
@@ -13,6 +16,7 @@ namespace SCDesctopUI.ViewModels
     {
 		private string _calculatorDisplay;
 		private Calculator calculator = new Calculator();
+		private static System.Timers.Timer timer;
 
 		public string CalculatorDisplay
 		{
@@ -141,12 +145,23 @@ namespace SCDesctopUI.ViewModels
 		{
 			get { return calculator.inputHandler.CanHandleEraseInput(); }
 		}
-		public void MakeEraseInput()
+		public void MakeEraseInput(MouseButtonEventArgs e)
 		{
-			calculator.inputHandler.HandleEraseInput();
+			if(e.RoutedEvent == UIElement.PreviewMouseLeftButtonDownEvent)
+			{
+				timer = new System.Timers.Timer(1000);
+				timer.Elapsed += Timer_Elapsed;
+				timer.AutoReset = false;
+				timer.Enabled = true;
+			}
+			if(e.RoutedEvent == UIElement.PreviewMouseLeftButtonUpEvent)
+			{
+				timer.Close();
+				calculator.inputHandler.HandleEraseInput();
 
-			CalculatorDisplay = calculator.display.SendDisplay();
-			UpdateProperties();
+				CalculatorDisplay = calculator.display.SendDisplay();
+				UpdateProperties();
+			}
 		}
 
 
@@ -163,7 +178,13 @@ namespace SCDesctopUI.ViewModels
 		}
 
 
-		
+		private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+		{
+			calculator.inputHandler.HandleEraseAllInput();
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
+		}
+
 
 		private void UpdateProperties()
 		{

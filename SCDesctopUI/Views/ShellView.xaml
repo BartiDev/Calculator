@@ -124,7 +124,8 @@
 
         <!-- Calculator Erase Button-->
         <Button x:Name="BtAC" Grid.Column="7" Grid.Row="2" Content="AC"
-                cal:Message.Attach="[Event Click] = [Action MakeEraseInput]"/>
+                cal:Message.Attach="[Event PreviewMouseLeftButtonDown] = [Action MakeEraseInput($eventArgs)];
+                [Event PreviewMouseLeftButtonUp] = [Action MakeEraseInput($eventArgs)]"/>
 
 
     </Grid>

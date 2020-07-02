@@ -64,7 +64,11 @@ namespace SCInputProcessing.InputHandling
         }
         public void HandleEraseInput()
         {
-            handleEraseInput.HandleInput(c.inputSequence, c.postUnaryOperators, c.preUnaryOperators);
+            handleEraseInput.HandleInput(c.inputSequence, c.postUnaryOperators, c.preUnaryOperators, c.constants);
+        }
+        public void HandleEraseAllInput()
+        {
+            handleEraseInput.HandleEraseAllInput(c.inputSequence);
         }
         public void HandleEqualInput()
         {
