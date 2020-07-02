@@ -8,7 +8,7 @@ namespace SCInputProcessing.Processing
 {
     public class EvaluateConstants
     {
-        public void Evaluate(List<string> inputSequence)
+        public void Evaluate(List<string> inputSequence, string ans)
         {
             int sLenght = inputSequence.Count;
 
@@ -21,6 +21,9 @@ namespace SCInputProcessing.Processing
                         break;
                     case "pi":
                         inputSequence[i] = Convert.ToString(Math.PI);
+                        break;
+                    case "Ans":
+                        inputSequence[i] = ans;
                         break;
                 }
             }

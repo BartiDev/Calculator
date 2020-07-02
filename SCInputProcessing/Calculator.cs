@@ -12,6 +12,7 @@ namespace SCInputProcessing
     public class Calculator
     {
         public List<string> inputSequence;
+        public string ans = "0";
 
         public InputHandler inputHandler;
         public Processor processor;

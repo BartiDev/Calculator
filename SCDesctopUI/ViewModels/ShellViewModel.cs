@@ -14,7 +14,8 @@ namespace SCDesctopUI.ViewModels
 {
     public class ShellViewModel : Screen
     {
-		private string _calculatorDisplay;
+		private string _calculatorDisplay = "0";
+		private string _calculatorAnsDisplay = "0";
 		private Calculator calculator = new Calculator();
 		private static System.Timers.Timer timer;
 
@@ -22,6 +23,11 @@ namespace SCDesctopUI.ViewModels
 		{
 			get { return _calculatorDisplay; }
 			set { _calculatorDisplay = value; NotifyOfPropertyChange(() => CalculatorDisplay); }
+		}
+		public string CalculatorAnsDisplay
+		{
+			get { return _calculatorAnsDisplay; }
+			set { _calculatorAnsDisplay = value; NotifyOfPropertyChange(() => CalculatorAnsDisplay); }
 		}
 
 		public bool CanMakeNumericInput 
@@ -174,6 +180,8 @@ namespace SCDesctopUI.ViewModels
 			calculator.inputHandler.HandleEqualInput();
 
 			CalculatorDisplay = calculator.display.SendDisplay();
+			CalculatorAnsDisplay = CalculatorDisplay;
+			calculator.ans = CalculatorDisplay;
 			UpdateProperties();
 		}
 

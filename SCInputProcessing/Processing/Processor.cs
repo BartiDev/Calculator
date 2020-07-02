@@ -22,7 +22,7 @@ namespace SCInputProcessing.Processing
         public void PerformCalculation()
         {
 
-            evaluateConstants.Evaluate(c.inputSequence);
+            evaluateConstants.Evaluate(c.inputSequence, c.ans);
 
             int[] innerMostParanthesis = null;
             bool minusBeforeLParanthesis;
