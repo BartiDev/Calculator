@@ -17,8 +17,9 @@ namespace SCInputProcessing.Displaying
         {
             c = calculator;
 
-            operatorsToSwap = new List<string> { "/", "x", "sqrt", "pi" };
-            operatorsToSwapInEscapeSeq = new List<string> { "\u00F7", "\u00D7", "\u221A", "\u03C0" };
+            operatorsToSwap = new List<string> { "/", "x", "sqrt", "pi", "sin-1", "cos-1", "tan-1" };
+            operatorsToSwapInEscapeSeq = new List<string> { "\u00F7", "\u00D7", "\u221A", "\u03C0",
+                "sin \u008D\u0304 \u00B9", "cos \u008D\u0304 \u00B9", "tan \u008D\u0304 \u00B9" };
         }
 
         public string SendDisplay()

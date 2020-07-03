@@ -48,7 +48,7 @@ namespace SCInputProcessing.InputHandling
         }
         public void HandlePreUnaryOperatorInput(string input)
         {
-            handlePreUnaryOperatorInput.HandleInput(c.inputSequence, input);
+            handlePreUnaryOperatorInput.HandleInput(c.inputSequence, c.preUnaryOperators, input);
         }
         public void HandlePostUnaryOperatorInput(string input)
         {

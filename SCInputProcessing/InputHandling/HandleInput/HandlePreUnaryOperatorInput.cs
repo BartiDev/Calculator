@@ -8,7 +8,7 @@ namespace SCInputProcessing.InputHandling
 {
     public class HandlePreUnaryOperatorInput
     {
-        public void HandleInput(List<string> inputSequence, string input)
+        public void HandleInput(List<string> inputSequence, List<string> preUnaryOperators, string input)
         {
             int sLength = inputSequence.Count;
 
@@ -16,6 +16,20 @@ namespace SCInputProcessing.InputHandling
             {
                 inputSequence[0] = input;
                 //inputSequence.Add("(");
+                inputSequence.Add("");
+            }
+            else if (inputSequence[sLength - 1] == "" && preUnaryOperators.Contains(inputSequence[sLength - 2]))
+            {
+                inputSequence[sLength - 1] = "(";
+                inputSequence.Add(input);
+                inputSequence.Add("");
+            }
+            else if (inputSequence[sLength - 1] == "-" && preUnaryOperators.Contains(inputSequence[sLength - 2]))
+            {
+                inputSequence[sLength - 1] = "(";
+                inputSequence.Add("0");
+                inputSequence.Add("-");
+                inputSequence.Add(input);
                 inputSequence.Add("");
             }
             else if((inputSequence[sLength - 1] == "-") ||

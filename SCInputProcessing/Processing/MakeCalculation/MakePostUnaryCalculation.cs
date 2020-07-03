@@ -16,6 +16,9 @@ namespace SCInputProcessing.Processing
                 case "!":
                     result = calculateFactorial(num);
                     break;
+                case "^2":
+                    result = Convert.ToDouble(num) * Convert.ToDouble(num);
+                    break;
             }
             return Convert.ToString(result);
         }

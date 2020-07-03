@@ -16,6 +16,8 @@ namespace SCDesctopUI.ViewModels
     {
 		private string _calculatorDisplay = "0";
 		private string _calculatorAnsDisplay = "0";
+		private Visibility _inverseMode = Visibility.Collapsed;
+		private Visibility _normalMode = Visibility.Visible;
 		private Calculator calculator = new Calculator();
 		private static System.Timers.Timer timer;
 
@@ -29,6 +31,19 @@ namespace SCDesctopUI.ViewModels
 			get { return _calculatorAnsDisplay; }
 			set { _calculatorAnsDisplay = value; NotifyOfPropertyChange(() => CalculatorAnsDisplay); }
 		}
+
+		public Visibility InverseMode 
+		{
+			get { return _inverseMode; } 
+			set { _inverseMode = value; NotifyOfPropertyChange(() => InverseMode); } 
+		}
+
+		public Visibility NormalMode
+		{
+			get { return _normalMode; }
+			set { _normalMode = value; NotifyOfPropertyChange(() => NormalMode); }
+		}
+
 
 		public bool CanMakeNumericInput 
 		{ 
@@ -183,6 +198,20 @@ namespace SCDesctopUI.ViewModels
 			CalculatorAnsDisplay = CalculatorDisplay;
 			calculator.ans = CalculatorDisplay;
 			UpdateProperties();
+		}
+
+		public void MakeInverseInput()
+		{
+			if (NormalMode == Visibility.Visible)
+			{
+				NormalMode = Visibility.Collapsed;
+				InverseMode = Visibility.Visible;
+			}
+			else
+			{
+				NormalMode = Visibility.Visible;
+				InverseMode = Visibility.Collapsed;
+			}
 		}
 
 

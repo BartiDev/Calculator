@@ -77,7 +77,8 @@
         <Button x:Name="BtE" Grid.Column="1" Grid.Row="6" Content="e"
                 cal:Message.Attach="[Event Click] = [Action MakeConstantInput('e')]"/>
         <Button x:Name="BtAns" Grid.Column="1" Grid.Row="7" Content="Ans"
-                cal:Message.Attach="[Event Click] = [Action MakeConstantInput('Ans')]"/>
+                cal:Message.Attach="[Event Click] = [Action MakeConstantInput('Ans')]"
+                Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
 
         <!-- Calculator Dot Button-->
         <Button x:Name="BtDot" Grid.Column="5" Grid.Row="7" Content="."
@@ -105,23 +106,48 @@
 
         <!-- Calculator Pre Unary Operation Button-->
         <Button x:Name="BtLn" Grid.Column="3" Grid.Row="4" Content="ln"
-                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLn.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLn.Content)]"
+                Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
         <Button x:Name="BtLog" Grid.Column="3" Grid.Row="5" Content="log"
-                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLog.Content)]"/>
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput(BtLog.Content)]"
+                Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
         <Button x:Name="BtRoot" Grid.Column="3" Grid.Row="6" Content="&#8730;"
-                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sqrt')]"/>
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sqrt')]"
+                Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
         <Button x:Name="Btsin" Grid.Column="2" Grid.Row="4" Content="sin"
-                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sin')]"/>
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sin')]"
+                Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
         <Button x:Name="Btcos" Grid.Column="2" Grid.Row="5" Content="cos"
-                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('cos')]"/>
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('cos')]"
+                Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
         <Button x:Name="Bttan" Grid.Column="2" Grid.Row="6" Content="tan"
-                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('tan')]"/>
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('tan')]"
+                Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
         <Button x:Name="BtEXP" Grid.Column="2" Grid.Row="7" Content="EXP"
                 cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('E')]"/>
+        <Button x:Name="BtMinusSin" Grid.Column="2" Grid.Row="4" Content="sin &#141;&#772; &#185;"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('sin-1')]"
+                Visibility="{Binding Path=InverseMode, Mode=TwoWay}"/>
+        <Button x:Name="BtMinusCos" Grid.Column="2" Grid.Row="5" Content="cos &#141;&#772; &#185;"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('cos-1')]"
+                Visibility="{Binding Path=InverseMode, Mode=TwoWay}"/>
+        <Button x:Name="BtMinusTan" Grid.Column="2" Grid.Row="6" Content="tan &#141;&#772; &#185;"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('tan-1')]"
+                Visibility="{Binding Path=InverseMode, Mode=TwoWay}"/>
+        <Button x:Name="BtEX" Grid.Column="3" Grid.Row="4" Content="e&#739;"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('e^')]"
+                Visibility="{Binding Path=InverseMode, Mode=TwoWay}"/>
+        <Button x:Name="Bt10X" Grid.Column="3" Grid.Row="5" Content="10&#739;"
+                cal:Message.Attach="[Event Click] = [Action MakePreUnaryOperatorInput('10^')]"
+                Visibility="{Binding Path=InverseMode, Mode=TwoWay}"/>
+        
 
         <!-- Calculator post Unary Operation Button-->
         <Button x:Name="BtFactorial" Grid.Column="3" Grid.Row="3" Content="x!"
                 cal:Message.Attach="[Event Click] = [Action MakePostUnaryOperatorInput('!')]"/>
+        <Button x:Name="BtInvRoot" Grid.Column="3" Grid.Row="6" Content="x&#178;"
+                cal:Message.Attach="[Event Click] = [Action MakePostUnaryOperatorInput('^2')]"
+                Visibility="{Binding Path=InverseMode, Mode=TwoWay}"/>
 
         <!-- Calculator Parantheses Button-->
         <Button x:Name="BtLParanthesis" Grid.Column="4" Grid.Row="3" Content="("
@@ -133,7 +159,10 @@
         <Button x:Name="BtAC" Grid.Column="7" Grid.Row="3" Content="AC"
                 cal:Message.Attach="[Event PreviewMouseLeftButtonDown] = [Action MakeEraseInput($eventArgs)];
                 [Event PreviewMouseLeftButtonUp] = [Action MakeEraseInput($eventArgs)]"/>
-
+        
+        <!-- Calculator Inverse Button -->
+        <Button x:Name="BtInv" Grid.Column="1" Grid.Row="4" Content="Inv"
+                cal:Message.Attach="[Event Click] = [Action MakeInverseInput]"/>
 
     </Grid>
 </Window>

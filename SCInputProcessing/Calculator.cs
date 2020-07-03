@@ -34,13 +34,13 @@ namespace SCInputProcessing
             //operators list according to the order of operation
             operatorList = new List<List<string>>
             {
-                new List<string>{"!", "ln", "log", "sin", "cos", "tan", "E", "^", "sqrt"},
+                new List<string>{"!", "^2", "ln", "log", "sin", "cos", "tan", "E", "^", "sqrt", "e^", "10^", "sin-1", "cos-1", "tan-1"},
                 new List<string>{"x", "/", "%"},
                 new List<string>{"+", "-"}
             };
             binaryOperators = new List<string> { "^", "x", "/", "%", "+", "-" };
-            preUnaryOperators = new List<string> { "ln", "log", "sqrt", "sin", "cos", "tan", "E" };
-            postUnaryOperators = new List<string> { "!" };
+            preUnaryOperators = new List<string> { "ln", "log", "sqrt", "sin", "cos", "tan", "E", "e^", "10^", "sin-1", "cos-1", "tan-1" };
+            postUnaryOperators = new List<string> { "!", "^2" };
             constants = new List<string> { "e", "pi" };
         }
 

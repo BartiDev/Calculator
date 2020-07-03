@@ -23,16 +23,31 @@ namespace SCInputProcessing.Processing
                     result = Math.Sqrt(Convert.ToDouble(num));
                     break;
                 case "sin":
-                    result = Math.Sin(Convert.ToDouble(num));
+                    result = Math.Sin(Convert.ToDouble(num) * Math.PI / 180);
                     break;
                 case "cos":
-                    result = Math.Cos(Convert.ToDouble(num));
+                    result = Math.Cos(Convert.ToDouble(num) * Math.PI / 180);
                     break;
                 case "tan":
-                    result = Math.Tan(Convert.ToDouble(num));
+                    result = Math.Tan(Convert.ToDouble(num) * Math.PI / 180);
+                    break;
+                case "sin-1":
+                    result = Math.Asin(Convert.ToDouble(num)) * 180 / Math.PI;
+                    break;
+                case "cos-1":
+                    result = Math.Acos(Convert.ToDouble(num)) * 180 / Math.PI;
+                    break;
+                case "tan-1":
+                    result = Math.Atan(Convert.ToDouble(num)) * 180 / Math.PI;
                     break;
                 case "E":
                     result = Math.Pow(10, Convert.ToDouble(num));
+                    break;
+                case "10^":
+                    result = Math.Pow(10, Convert.ToDouble(num));
+                    break;
+                case "e^":
+                    result = Math.Pow(Math.E, Convert.ToDouble(num));
                     break;
             }
             return Convert.ToString(result);
