@@ -12,9 +12,9 @@ namespace SCInputProcessing.InputHandling
         {
             int sLenght = inputSequence.Count;
 
-            inputSequence.Add(inputSequence[sLenght - 1]);
-            inputSequence[sLenght - 1] = "(";
-            inputSequence.Add(")");
+            //inputSequence.Add(inputSequence[sLenght - 1]);
+            //inputSequence[sLenght - 1] = "(";
+            //inputSequence.Add(")");
             inputSequence.Add(input);
         }
 

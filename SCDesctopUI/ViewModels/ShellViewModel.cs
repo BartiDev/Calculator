@@ -170,7 +170,7 @@ namespace SCDesctopUI.ViewModels
 		{
 			if(e.RoutedEvent == UIElement.PreviewMouseLeftButtonDownEvent)
 			{
-				timer = new System.Timers.Timer(1000);
+				timer = new System.Timers.Timer(500);
 				timer.Elapsed += Timer_Elapsed;
 				timer.AutoReset = false;
 				timer.Enabled = true;

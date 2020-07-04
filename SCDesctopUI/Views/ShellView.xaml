@@ -79,6 +79,9 @@
         <Button x:Name="BtAns" Grid.Column="1" Grid.Row="7" Content="Ans"
                 cal:Message.Attach="[Event Click] = [Action MakeConstantInput('Ans')]"
                 Visibility="{Binding Path=NormalMode, Mode=TwoWay}"/>
+        <Button x:Name="BtRnd" Grid.Column="1" Grid.Row="7" Content="Rnd"
+                cal:Message.Attach="[Event Click] = [Action MakeConstantInput('Rnd')]"
+                Visibility="{Binding Path=InverseMode, Mode=TwoWay}"/>
 
         <!-- Calculator Dot Button-->
         <Button x:Name="BtDot" Grid.Column="5" Grid.Row="7" Content="."

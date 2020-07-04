@@ -10,6 +10,7 @@ namespace SCInputProcessing.Processing
     {
         public void Evaluate(List<string> inputSequence, string ans)
         {
+            Random rand = new Random();
             int sLenght = inputSequence.Count;
 
             for(int i = 0; i < sLenght; i++)
@@ -24,6 +25,9 @@ namespace SCInputProcessing.Processing
                         break;
                     case "Ans":
                         inputSequence[i] = ans;
+                        break;
+                    case "Rnd":
+                        inputSequence[i] = Convert.ToString(rand.NextDouble());
                         break;
                 }
             }
