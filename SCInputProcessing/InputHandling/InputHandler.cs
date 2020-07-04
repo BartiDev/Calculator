@@ -20,6 +20,7 @@ namespace SCInputProcessing.InputHandling
         HandlePostUnaryOperatorInput handlePostUnaryOperatorInput = new HandlePostUnaryOperatorInput();
         HandleEraseInput handleEraseInput = new HandleEraseInput();
         HandleEqualInput handleEqualInput = new HandleEqualInput();
+        HandleDegRadConversionInput handleDegRadConversionInput = new HandleDegRadConversionInput();
 
         public InputHandler(Calculator calculator)
         {
@@ -74,6 +75,10 @@ namespace SCInputProcessing.InputHandling
         {
             c.processor.PerformCalculation();
         }
+        public void HandleDegRadConversionInput(string input)
+        {
+            c.processor.PerformDegRadConversion(input);
+        }
 
 
         public bool CanHandleNumericInput()
@@ -119,6 +124,10 @@ namespace SCInputProcessing.InputHandling
         public bool CanHandleEqualInput()
         {
             return handleEqualInput.CanHandle(c.inputSequence);
+        }
+        public bool CanHandleDegRadConversionInput()
+        {
+            return handleDegRadConversionInput.CanHandle(c.inputSequence);
         }
     }
 }

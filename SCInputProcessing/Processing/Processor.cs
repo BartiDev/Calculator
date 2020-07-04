@@ -65,5 +65,23 @@ namespace SCInputProcessing.Processing
                 }
             } while (innerMostParanthesis != null);
         }
+
+        public void PerformDegRadConversion(string input)
+        {
+            double value = 0;
+
+            if (c.constants.Contains(c.inputSequence[0]))
+            {
+                EvaluateConstants evaluateConstants = new EvaluateConstants();
+                evaluateConstants.Evaluate(c.inputSequence, c.ans);
+            }
+
+
+            if (input == "Deg")
+                value = Convert.ToDouble(c.inputSequence[0]) * 180 / Math.PI;
+            if (input == "Rad")
+                value = Convert.ToDouble(c.inputSequence[0]) * Math.PI / 180;
+            c.inputSequence[0] = Convert.ToString(value);
+        }
     }
 }

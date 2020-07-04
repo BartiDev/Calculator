@@ -200,6 +200,7 @@ namespace SCDesctopUI.ViewModels
 			UpdateProperties();
 		}
 
+
 		public void MakeInverseInput()
 		{
 			if (NormalMode == Visibility.Visible)
@@ -212,6 +213,19 @@ namespace SCDesctopUI.ViewModels
 				NormalMode = Visibility.Visible;
 				InverseMode = Visibility.Collapsed;
 			}
+		}
+
+
+		public bool CanMakeDegRadConversionInput
+		{
+			get { return calculator.inputHandler.CanHandleDegRadConversionInput(); }
+		}
+		public void MakeDegRadConversionInput(string text)
+		{
+			calculator.inputHandler.HandleDegRadConversionInput(text);
+
+			CalculatorDisplay = calculator.display.SendDisplay();
+			UpdateProperties();
 		}
 
 
@@ -236,6 +250,7 @@ namespace SCDesctopUI.ViewModels
 			NotifyOfPropertyChange(() => CanMakeRParanthesisInput);
 			NotifyOfPropertyChange(() => CanMakeEraseInput);
 			NotifyOfPropertyChange(() => CanMakeEqualInput);
+			NotifyOfPropertyChange(() => CanMakeDegRadConversionInput);
 		}
 	}
 }

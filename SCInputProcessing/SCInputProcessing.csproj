@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="Displaying\Display.cs" />
+    <Compile Include="InputHandling\HandleInput\HandleDegRadConversionInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleConstantInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleEqualInput.cs" />
     <Compile Include="InputHandling\HandleInput\HandleEraseInput.cs" />

@@ -163,6 +163,12 @@
         <!-- Calculator Inverse Button -->
         <Button x:Name="BtInv" Grid.Column="1" Grid.Row="4" Content="Inv"
                 cal:Message.Attach="[Event Click] = [Action MakeInverseInput]"/>
+        
+        <!-- To Degree/To Rad Conversion Buttons-->
+        <Button x:Name="BtDeg" Grid.Column="1" Grid.Row="3" Content="Deg"
+                cal:Message.Attach="[Event Click] = [Action MakeDegRadConversionInput('Deg')]"/>
+        <Button x:Name="BtRad" Grid.Column="2" Grid.Row="3" Content="Rad"
+                cal:Message.Attach="[Event Click] = [Action MakeDegRadConversionInput('Rad')]"/>
 
     </Grid>
 </Window>
