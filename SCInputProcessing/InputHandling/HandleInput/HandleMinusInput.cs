@@ -11,9 +11,9 @@ namespace SCInputProcessing.InputHandling
         public void HandleInput(List<string> inputSequence)
         {
             int sLenght = inputSequence.Count;
-            if(sLenght>1&& inputSequence[sLenght - 1] == ""&& inputSequence[sLenght - 2] == ")")
+            if(sLenght > 1 && inputSequence[sLenght - 1] == "" && inputSequence[sLenght - 2] == ")")
             {
-                inputSequence.Add("-");
+                inputSequence[sLenght - 1] += "-";
                 inputSequence.Add("");
             }
             else if (inputSequence[sLenght - 1] == "")
